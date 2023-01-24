@@ -19,18 +19,12 @@ const config = {
 }
 */
 const config = {
-  model: process.env.MODEL,
-  
-  temperature: process.env.TEMPERATURE,
-  max_tokens: process.env.MAX_TOKENS,
-  top_p: process.env.TOP_P,
-  frequency_penalty: process.env.FREQUENCY_PENALTY,
-  presence_penalty: process.env.PRESENCE_PENALTY
-
- 
-
-
-
+  model: process.env.MODEL,
+  temperature: parseFloat(process.env.TEMPERATURE),
+  max_tokens: parseFloat(process.env.MAX_TOKENS),
+  top_p: parseFloat(process.env.TOP_P),
+  frequency_penalty: parseFloat(process.env.FREQUENCY_PENALTY),
+  presence_penalty: parseFloat(process.env.PRESENCE_PENALTY)
 }
 
 const openai = new OpenAIApi(configuration);
